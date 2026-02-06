@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikachiev ⚡ - Advanced Achievement Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <i class="fas fa-atom"></i>
+            </div>
+            <div class="loading-text">SYSTEM BOOTING</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-stats">
+                <div>INITIALIZING Pikachiev ⚡ v2.0</div>
+                <div>LOADING CYBER SYSTEMS...</div>
+            </div>
+        </div>
+        <div class="matrix-rain" id="matrixRain"></div>
+    </div>
+
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+
+    <!-- Cyber Grid -->
+    <div class="cyber-grid"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">⚡</div>
+                    <div class="logo-text">
+                        <h1>Pikachiev ⚡</h1>
+                        <p>QUANTUM PROGRESS TRACKING SYSTEM</p>
+                    </div>
+                </div>
+
+                <div class="user-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="userLevel">8</div>
+                        <div class="stat-label">QUANTUM LEVEL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="userPoints">5,280</div>
+                        <div class="stat-label">ENERGY POINTS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">42 <i class="fas fa-fire" style="color: var(--warning);"></i></div>
+                        <div class="stat-label">STREAK CYCLE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-overview">
+
+
+
+
+                <div class="progress-card">
+                    <h3><i class="fas fa-chart-network"></i> Yearly Protocols</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="yearlyProgressHeaderFill" style="width: 82%;"></div>
+                    </div>
+                    <div class="progress-label">
+                        <span>82% OPERATIONAL</span>
+                        <span>0/50 GOALS</span>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3><i class="fas fa-calendar-day"></i> Weekly Cycles</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="weeklyProgressFill" style="width: 60%;"></div>
+                    </div>
+                    <div class="progress-label">
+                        <span>60% QUANTIZED</span>
+                        <span>0/20 PROTOCOLS</span>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3><i class="fas fa-sync-alt"></i> Monthly Systems</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="monthlyProgressFill" style="width: 68%;"></div>
+                    </div>
+                    <div class="progress-label">
+                        <span>68% OPTIMIZED</span>
+                        <span>0/50 CHALLENGES</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Main Navigation -->
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-item active" data-section="challenges">
+                <div class="nav-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h3>MISSION CONTROL</h3>
+                <p>Access weekly, monthly, and yearly quantum challenges</p>
+                <div class="nav-stats">
+                    <span>ACTIVE MISSIONS</span>
+                    <span>28</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="progress">
+                <div class="nav-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>SYS ANALYSIS</h3>
+                <p>Real-time progress tracking and system diagnostics</p>
+                <div class="nav-stats">
+                    <span>OVERALL EFFICIENCY</span>
+                    <span>78%</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="badges">
+                <div class="nav-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>ACHIEVEMENT CORE</h3>
+                <p>Quantum badges and achievement protocols</p>
+                <div class="nav-stats">
+                    <span>UNLOCKED NODES</span>
+                    <span>18/58</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="categories">
+                <div class="nav-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>SECTOR GRIDS</h3>
+                <p>Track progress across Social, Family, Adventure, Self Care, Entertainment & Personal Growth</p>
+                <div class="nav-stats">
+                    <span>ACTIVE SECTORS</span>
+                    <span>6</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="recap">
+                <div class="nav-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>DATA PULSE</h3>
+                <p>Monthly system performance and quantum insights</p>
+                <div class="nav-stats">
+                    <span>THIS CYCLE</span>
+                    <span>47</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="add">
+                <div class="nav-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3>PROTOCOL GEN</h3>
+                <p>Generate custom quantum challenges and missions</p>
+                <div class="nav-stats">
+                    <span>CUSTOM PROTOCOLS</span>
+                    <span>12</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="analytics">
+                <div class="nav-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>ANALYTICS HUB</h3>
+                <p>Advanced charts, insights, and progress analytics</p>
+                <div class="nav-stats">
+                    <span>INSIGHTS</span>
+                    <span>12</span>
+                </div>
+            </div>
+
+            <div class="nav-item" data-section="theme">
+                <div class="nav-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>THEME CUSTOMIZATION</h3>
+                <p>Change colors, themes, and customize the visual interface</p>
+                <div class="nav-stats">
+                    <span>THEMES</span>
+                    <span>6</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Sections -->
+
+        <!-- Challenges Section -->
+        <section id="challengesSection" class="content-section active">
+            <div class="section-header">
+                <h2><i class="fas fa-terminal"></i> QUANTUM MISSIONS</h2>
+                <div class="challenge-tabs">
+                    <button class="challenge-tab active" onclick="showChallengeType('weekly')">WEEKLY CYCLES</button>
+                    <button class="challenge-tab" onclick="showChallengeType('monthly')">MONTHLY SYSTEMS</button>
+                    <button class="challenge-tab" onclick="showChallengeType('yearly')">YEARLY PROTOCOLS</button>
+                </div>
+            </div>
+
+            <div class="challenges-container">
+                <div id="weeklyChallenges" class="challenge-list">
+                    <!-- Weekly challenges will be dynamically inserted here -->
+                </div>
+
+                <div id="monthlyChallenges" class="challenge-list" style="display: none;">
+                    <!-- Monthly challenges will be dynamically inserted here -->
+                </div>
+
+                <div id="yearlyChallenges" class="challenge-list" style="display: none;">
+                    <!-- Yearly challenges will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progressSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-network"></i> SYSTEM ANALYSIS</h2>
+                <button class="btn btn-primary" onclick="updateAllProgress()">
+                    <i class="fas fa-sync-alt"></i> REFRESH SYSTEMS
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <h3 style="margin-bottom: 25px; color: var(--primary); font-family: 'Orbitron';">DAILY PROTOCOLS</h3>
+                <div class="progress-label">
+                    <span>ACTIVATION STATUS</span>
+                    <span id="dailyProgressText">15/20 ACTIVE</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="dailyProgressFill2" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <h3 style="margin-bottom: 25px; color: var(--primary); font-family: 'Orbitron';">WEEKLY CYCLES</h3>
+                <div class="progress-label">
+                    <span>SYNCHRONIZATION</span>
+                    <span id="weeklyProgressText">34/50 SYNCHED</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="weeklyProgressFill2" style="width: 68%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <h3 style="margin-bottom: 25px; color: var(--primary); font-family: 'Orbitron';">MONTHLY SYSTEMS</h3>
+                <div class="progress-label">
+                    <span>OPERATIONAL STATUS</span>
+                    <span id="monthlyProgressText">41/50 ONLINE</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="monthlyProgressFill2" style="width: 82%;"></div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <h3 style="margin-bottom: 25px; color: var(--primary); font-family: 'Orbitron';">YEARLY PROTOCOLS</h3>
+                <div class="progress-label">
+                    <span>QUANTUM PROGRESS</span>
+                    <span id="yearlyProgressText">12/20 QUANTIZED</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="yearlyProgressFill"
+                        style="width: 60%; background: linear-gradient(90deg, var(--personal), var(--epic));"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges Section -->
+        <section id="badgesSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-medal"></i> ACHIEVEMENT CORE</h2>
+                <div>
+                    <span class="stat-value" style="font-size: 32px;" id="badgeCount">18</span>
+                    <span class="stat-label">NODES UNLOCKED</span>
+                </div>
+            </div>
+
+            <div class="badges-container" id="badgesContainer">
+                <!-- Badges will be dynamically inserted here -->
+            </div>
+            <!-- Add this after the badges-container div -->
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid rgba(0, 212, 255, 0.3);">
+                <h3
+                    style="color: var(--primary); margin-bottom: 25px; font-family: 'Orbitron'; display: flex; align-items: center; gap: 15px;">
+                    <i class="fas fa-list-check"></i> BADGE REQUIREMENTS
+                </h3>
+
+                <div class="challenge-tabs" style="margin-bottom: 25px;">
+                    <button class="badge-filter-tab active" onclick="filterBadges('all')">
+                        ALL BADGES
+                    </button>
+                    <button class="badge-filter-tab" onclick="filterBadges('common')">
+                        COMMON
+                    </button>
+                    <button class="badge-filter-tab" onclick="filterBadges('uncommon')">
+                        UNCOMMON
+                    </button>
+                    <button class="badge-filter-tab" onclick="filterBadges('rare')">
+                        RARE
+                    </button>
+                    <button class="badge-filter-tab" onclick="filterBadges('epic')">
+                        EPIC
+                    </button>
+                    <button class="badge-filter-tab" onclick="filterBadges('legendary')">
+                        LEGENDARY
+                    </button>
+                </div>
+
+                <div class="requirements-list" id="requirementsList"
+                    style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                    <!-- Badge requirements will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categoriesSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-layer-group"></i> SECTOR GRIDS</h2>
+                <button class="btn btn-outline" onclick="showCategoryDetails()">
+                    <i class="fas fa-chart-bar"></i> GRID ANALYSIS
+                </button>
+            </div>
+
+            <div class="recap-grid">
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(255, 102, 204, 0.2); color: var(--social);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="recap-value" id="socialProgress">30%</div>
+                    <div class="recap-label">SOCIAL</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 30%; background: var(--social);"></div>
+                    </div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(255, 153, 102, 0.2); color: #FF9966;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="recap-value" id="familyProgress">40%</div>
+                    <div class="recap-label">FAMILY</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 40%; background: #FF9966;"></div>
+                    </div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(255, 204, 0, 0.2); color: #FFCC00;">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="recap-value" id="adventureProgress">20%</div>
+                    <div class="recap-label">ADVENTURE</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 20%; background: #FFCC00;"></div>
+                    </div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(204, 102, 255, 0.2); color: var(--personal);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="recap-value" id="selfcareProgress">50%</div>
+                    <div class="recap-label">SELF CARE</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 50%; background: var(--personal);"></div>
+                    </div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(102, 204, 255, 0.2); color: #66CCFF;">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="recap-value" id="entertainmentProgress">60%</div>
+                    <div class="recap-label">ENTERTAINMENT</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 60%; background: #66CCFF;"></div>
+                    </div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(0, 204, 153, 0.2); color: #00CC99;">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="recap-value" id="personalProgress">35%</div>
+                    <div class="recap-label">PERSONAL GROWTH</div>
+                    <div class="progress-bar" style="margin-top: 20px; height: 10px;">
+                        <div class="progress-fill" style="width: 35%; background: #00CC99;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Recap Section -->
+        <section id="recapSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-pie"></i> DATA PULSE - JANUARY 2024</h2>
+                <button class="btn btn-primary" onclick="generateRecapReport()">
+                    <i class="fas fa-download"></i> EXPORT MATRIX
+                </button>
+            </div>
+
+            <div class="recap-grid">
+                <div class="recap-card">
+                    <div class="recap-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="recap-value" id="recapChallenges">47</div>
+                    <div class="recap-label">MISSIONS COMPLETED</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="recap-value" id="recapPoints">5,280</div>
+                    <div class="recap-label">QUANTUM ENERGY</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="recap-value" id="recapStreak">42</div>
+                    <div class="recap-label">STREAK CYCLE</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="recap-value" id="recapBadges">18</div>
+                    <div class="recap-label">ACHIEVEMENT NODES</div>
+                </div>
+            </div>
+
+            <h3 style="margin: 40px 0 25px; color: var(--primary); font-family: 'Orbitron';">SYSTEM INSIGHTS</h3>
+            <div class="insights-grid" id="recapInsights">
+                <!-- Insights will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Add Challenge Section -->
+        <section id="addSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-plus-circle"></i> PROTOCOL GENERATOR</h2>
+                <button class="btn btn-outline" onclick="showChallengeTemplates()">
+                    <i class="fas fa-magic"></i> TEMPLATE MATRIX
+                </button>
+            </div>
+
+            <form id="addChallengeForm" style="max-width: 700px;">
+                <div style="margin-bottom: 25px;">
+                    <label
+                        style="display: block; margin-bottom: 12px; font-weight: 600; color: var(--primary); font-family: 'Orbitron';">MISSION
+                        TITLE</label>
+                    <input type="text" id="challengeTitle" placeholder="Enter quantum mission protocol..."
+                        style="width: 100%; padding: 18px; background: rgba(0, 212, 255, 0.1); border: var(--cyber-border); border-radius: var(--radius); font-size: 16px; color: var(--light); font-family: 'Exo 2';">
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label
+                        style="display: block; margin-bottom: 12px; font-weight: 600; color: var(--primary); font-family: 'Orbitron';">SECTOR</label>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button type="button" class="category-select btn btn-outline" data-category="social">
+                            <i class="fas fa-users"></i> SOCIAL
+                        </button>
+                        <button type="button" class="category-select btn btn-outline" data-category="family">
+                            <i class="fas fa-home"></i> FAMILY
+                        </button>
+                        <button type="button" class="category-select btn btn-outline" data-category="adventure">
+                            <i class="fas fa-mountain"></i> ADVENTURE
+                        </button>
+                        <button type="button" class="category-select btn btn-outline" data-category="selfcare">
+                            <i class="fas fa-heart"></i> SELF CARE
+                        </button>
+                        <button type="button" class="category-select btn btn-outline" data-category="entertainment">
+                            <i class="fas fa-film"></i> ENTERTAINMENT
+                        </button>
+                        <button type="button" class="category-select btn btn-outline" data-category="personal">
+                            <i class="fas fa-seedling"></i> PERSONAL GROWTH
+                        </button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label
+                        style="display: block; margin-bottom: 12px; font-weight: 600; color: var(--primary); font-family: 'Orbitron';">FREQUENCY
+                        CYCLE</label>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button type="button" class="frequency-select btn btn-outline active" data-frequency="weekly">
+                            <i class="fas fa-sync-alt"></i> WEEKLY
+                        </button>
+                        <button type="button" class="frequency-select btn btn-outline" data-frequency="monthly">
+                            <i class="fas fa-calendar-alt"></i> MONTHLY
+                        </button>
+                        <button type="button" class="frequency-select btn btn-outline" data-frequency="yearly">
+                            <i class="fas fa-calendar-day"></i> YEARLY
+                        </button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label
+                        style="display: block; margin-bottom: 12px; font-weight: 600; color: var(--primary); font-family: 'Orbitron';">TARGET
+                        QUANTUM</label>
+                    <input type="number" id="challengeTarget" placeholder="Enter target value..."
+                        style="width: 100%; padding: 18px; background: rgba(0, 212, 255, 0.1); border: var(--cyber-border); border-radius: var(--radius); font-size: 16px; color: var(--light); font-family: 'Exo 2';">
+                </div>
+
+                <div style="margin-bottom: 35px;">
+                    <label
+                        style="display: block; margin-bottom: 12px; font-weight: 600; color: var(--primary); font-family: 'Orbitron';">PROTOCOL
+                        DESCRIPTION</label>
+                    <textarea id="challengeDescription" placeholder="Enter mission parameters and protocols..."
+                        style="width: 100%; padding: 18px; background: rgba(0, 212, 255, 0.1); border: var(--cyber-border); border-radius: var(--radius); font-size: 16px; color: var(--light); font-family: 'Exo 2'; min-height: 120px;"></textarea>
+                </div>
+
+                <button type="button" class="btn btn-primary"
+                    style="width: 100%; padding: 22px; font-size: 18px; font-family: 'Orbitron';"
+                    onclick="addCustomChallenge()">
+                    <i class="fas fa-plus"></i> GENERATE PROTOCOL
+                </button>
+            </form>
+            <!-- Add this after the form closing tag but before the section closing tag -->
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid rgba(255, 51, 102, 0.3);">
+                <h3 style="color: var(--danger); margin-bottom: 20px; font-family: 'Orbitron';">
+                    <i class="fas fa-exclamation-triangle"></i> DANGER ZONE
+                </h3>
+                <p style="color: var(--gray); margin-bottom: 20px;">
+                    This will permanently delete all your progress, achievements, and history.
+                    This action cannot be undone.
+                </p>
+                <button class="btn" onclick="showDeleteConfirmation()"
+                    style="background: linear-gradient(135deg, var(--danger), #cc0033); color: white; width: 100%;">
+                    <i class="fas fa-trash-alt"></i> DELETE ALL HISTORY
+                </button>
+            </div>
+
+
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analyticsSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-bar"></i> ANALYTICS HUB</h2>
+                <button class="btn btn-primary" onclick="generateAnalyticsReport()">
+                    <i class="fas fa-file-export"></i> EXPORT REPORT
+                </button>
+            </div>
+
+            <!-- Time Period Selector -->
+            <div class="challenge-tabs" style="margin-bottom: 30px;">
+                <button class="analytics-period-tab active" onclick="showAnalyticsPeriod('week')">
+                    THIS WEEK
+                </button>
+                <button class="analytics-period-tab" onclick="showAnalyticsPeriod('month')">
+                    THIS MONTH
+                </button>
+                <button class="analytics-period-tab" onclick="showAnalyticsPeriod('year')">
+                    THIS YEAR
+                </button>
+                <button class="analytics-period-tab" onclick="showAnalyticsPeriod('all')">
+                    ALL TIME
+                </button>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="recap-grid">
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(0, 212, 255, 0.2); color: var(--primary);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="recap-value" id="avgCompletionTime">2.4h</div>
+                    <div class="recap-label">AVG COMPLETION TIME</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(0, 255, 157, 0.2); color: var(--success);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="recap-value" id="successRate">78%</div>
+                    <div class="recap-label">SUCCESS RATE</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(255, 204, 0, 0.2); color: var(--warning);">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="recap-value" id="peakHours">6-9 PM</div>
+                    <div class="recap-label">PEAK PRODUCTIVITY</div>
+                </div>
+
+                <div class="recap-card">
+                    <div class="recap-icon" style="background: rgba(204, 102, 255, 0.2); color: var(--personal);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="recap-value" id="bestCategory">SOCIAL</div>
+                    <div class="recap-label">BEST CATEGORY</div>
+                </div>
+            </div>
+
+            <!-- Charts Container -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin: 40px 0;">
+                <!-- Category Distribution Chart -->
+                <div class="chart-container">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">
+                        <i class="fas fa-chart-pie"></i> CATEGORY DISTRIBUTION
+                    </h3>
+                    <div class="chart" id="categoryChart"
+                        style="height: 300px; background: rgba(0, 212, 255, 0.05); border-radius: var(--radius); padding: 20px; border: var(--cyber-border);">
+                        <!-- Chart will be drawn here -->
+                    </div>
+                </div>
+
+                <!-- Completion Trend Chart -->
+                <div class="chart-container">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">
+                        <i class="fas fa-chart-line"></i> COMPLETION TREND
+                    </h3>
+                    <div class="chart" id="trendChart"
+                        style="height: 300px; background: rgba(0, 212, 255, 0.05); border-radius: var(--radius); padding: 20px; border: var(--cyber-border);">
+                        <!-- Chart will be drawn here -->
+                    </div>
+                </div>
+
+                <!-- Weekly Activity Heatmap -->
+                <div class="chart-container">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">
+                        <i class="fas fa-calendar-alt"></i> WEEKLY ACTIVITY
+                    </h3>
+                    <div class="chart" id="heatmapChart"
+                        style="height: 300px; background: rgba(0, 212, 255, 0.05); border-radius: var(--radius); padding: 20px; border: var(--cyber-border);">
+                        <!-- Heatmap will be drawn here -->
+                    </div>
+                </div>
+
+                <!-- Goal Difficulty Analysis -->
+                <div class="chart-container">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">
+                        <i class="fas fa-chart-bar"></i> DIFFICULTY ANALYSIS
+                    </h3>
+                    <div class="chart" id="difficultyChart"
+                        style="height: 300px; background: rgba(0, 212, 255, 0.05); border-radius: var(--radius); padding: 20px; border: var(--cyber-border);">
+                        <!-- Chart will be drawn here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Section -->
+            <h3 style="color: var(--primary); margin: 40px 0 20px; font-family: 'Orbitron';">
+                <i class="fas fa-lightbulb"></i> AI INSIGHTS
+            </h3>
+            <div class="insights-grid" id="analyticsInsights">
+                <!-- Insights will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- Theme Customization Section -->
+        <section id="themeSection" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-palette"></i> THEME CUSTOMIZATION</h2>
+                <button class="btn btn-outline" onclick="resetToDefaultTheme()">
+                    <i class="fas fa-redo"></i> RESET TO DEFAULT
+                </button>
+            </div>
+
+            <!-- ADD YOUR HTML CODE HERE -->
+            <!-- Your theme customization HTML goes in this div -->
+            <div id="themeCustomizationContent">
+                <!-- Add this in Add Challenge section or new Settings section -->
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid rgba(0, 212, 255, 0.3);">
+                    <h3
+                        style="color: var(--primary); margin-bottom: 25px; font-family: 'Orbitron'; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-palette"></i> THEME CUSTOMIZATION
+                    </h3>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <!-- Cyberpunk Theme (Default) -->
+                        <div class="theme-option active" data-theme="cyberpunk" onclick="changeTheme('cyberpunk')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #000000, #0a0a0f); border: 2px solid #00d4ff;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #00d4ff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #00ff9d; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #ffcc00; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">CYBERPUNK
+                                </div>
+                                <div style="color: var(--gray); font-size: 12px;">Default</div>
+                            </div>
+                        </div>
+
+                        <!-- Nature Theme -->
+                        <div class="theme-option" data-theme="nature" onclick="changeTheme('nature')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #0a2f1c, #1a4f2a); border: 2px solid #00ff9d;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #00ff9d; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #66ffb3; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #ffcc66; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">NATURE
+                                </div>
+                                <div style="color: var(--gray); font-size: 12px;">Green & Fresh</div>
+                            </div>
+                        </div>
+
+                        <!-- Sunset Theme -->
+                        <div class="theme-option" data-theme="sunset" onclick="changeTheme('sunset')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #1a0a0f, #2a1a1a); border: 2px solid #ff9966;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #ff9966; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #ffcc66; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #ff3366; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">SUNSET
+                                </div>
+                                <div style="color: var(--gray); font-size: 12px;">Orange & Warm</div>
+                            </div>
+                        </div>
+
+                        <!-- Ocean Theme -->
+                        <div class="theme-option" data-theme="ocean" onclick="changeTheme('ocean')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #0a1a2e, #1a2a3e); border: 2px solid #66ccff;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #66ccff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #00ccff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #00ffcc; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">OCEAN
+                                </div>
+                                <div style="color: var(--gray); font-size: 12px;">Blue & Calm</div>
+                            </div>
+                        </div>
+
+                        <!-- Galaxy Theme -->
+                        <div class="theme-option" data-theme="galaxy" onclick="changeTheme('galaxy')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #1a0a2e, #2a1a3e); border: 2px solid #cc66ff;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #cc66ff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #9966ff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #ff66cc; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">GALAXY
+                                </div>
+                                <div style="color: var(--gray); font-size: 12px;">Purple & Cosmic</div>
+                            </div>
+                        </div>
+
+                        <!-- Dark Mode -->
+                        <div class="theme-option" data-theme="dark" onclick="changeTheme('dark')">
+                            <div class="theme-preview"
+                                style="background: linear-gradient(135deg, #111111, #222222); border: 2px solid #ffffff;">
+                                <div style="display: flex; gap: 5px; padding: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #ffffff; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #666666; border-radius: 4px;">
+                                    </div>
+                                    <div style="width: 20px; height: 20px; background: #999999; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <div style="color: var(--primary); font-family: 'Orbitron'; font-size: 14px;">DARK</div>
+                                <div style="color: var(--gray); font-size: 12px;">Minimal & Clean</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Customization -->
+                    <div style="margin-top: 40px;">
+                        <h4 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">
+                            <i class="fas fa-sliders-h"></i> ADVANCED CUSTOMIZATION
+                        </h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <label style="display: block; margin-bottom: 10px; color: var(--primary-light);">Primary
+                                    Color</label>
+                                <input type="color" id="primaryColor" value="#00d4ff"
+                                    style="width: 100%; height: 40px; border: none; border-radius: var(--radius); cursor: pointer;">
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; margin-bottom: 10px; color: var(--primary-light);">Background</label>
+                                <input type="color" id="backgroundColor" value="#0a0a0f"
+                                    style="width: 100%; height: 40px; border: none; border-radius: var(--radius); cursor: pointer;">
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" onclick="applyCustomColors()"
+                            style="margin-top: 20px; width: 100%;">
+                            <i class="fas fa-check"></i> APPLY CUSTOM COLORS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Celebration Animation Container -->
+    <div class="celebration" id="celebrationContainer"></div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+
+
+    <!-- Add this before </body> -->
+    <div id="deleteConfirmation"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); z-index: 2000; justify-content: center; align-items: center;">
+        <div
+            style="background: rgba(26, 26, 46, 0.95); border: 2px solid var(--danger); border-radius: var(--radius-xl); padding: 40px; max-width: 500px; width: 90%; text-align: center; position: relative;">
+            <div style="font-size: 60px; color: var(--danger); margin-bottom: 20px;">
+                ⚠️
+            </div>
+            <h3 style="color: var(--danger); font-family: 'Orbitron'; margin-bottom: 15px;">
+                CONFIRM DATA DELETION
+            </h3>
+            <p style="color: var(--gray); margin-bottom: 25px; line-height: 1.6;">
+                Are you absolutely sure? This will:
+            </p>
+            <ul style="text-align: left; color: var(--light); margin-bottom: 30px; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">❌ Reset all goal progress to 0%</li>
+                <li style="margin-bottom: 10px;">❌ Delete all achievement badges</li>
+                <li style="margin-bottom: 10px;">❌ Clear all saved history</li>
+                <li style="margin-bottom: 10px;">❌ Reset your level and points</li>
+                <li>❌ Remove all monthly recaps</li>
+            </ul>
+            <p style="color: var(--warning); margin-bottom: 30px; font-weight: bold;">
+                THIS ACTION CANNOT BE UNDONE!
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <button onclick="hideDeleteConfirmation()" class="btn"
+                    style="background: rgba(0, 212, 255, 0.2); border: 2px solid var(--primary); color: var(--primary); padding: 15px 30px;">
+                    <i class="fas fa-times"></i> CANCEL
+                </button>
+                <button onclick="deleteAllHistory()" class="btn"
+                    style="background: linear-gradient(135deg, var(--danger), #cc0033); border: 2px solid var(--danger); color: white; padding: 15px 30px;">
+                    <i class="fas fa-trash-alt"></i> DELETE EVERYTHING
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- Add a button to delete all the history means all the data stored . all things will be start from 0. -->
