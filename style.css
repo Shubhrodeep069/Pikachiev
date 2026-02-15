@@ -1461,4 +1461,383 @@
     aspect-ratio: 16/9;
     border-radius: var(--radius-sm);
     overflow: hidden;
+
+}
+
+/* Phone Display - Make everything smaller */
+@media screen and (max-width: 768px) {
+    /* Container */
+    .container {
+        padding: 10px;
+    }
+    
+    /* Header */
+    .header {
+        padding: 15px;
+    }
+    
+    .logo-text h1 {
+        font-size: 24px;
+    }
+    
+    .logo-text p {
+        font-size: 10px;
+    }
+    
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    /* User Stats */
+    .user-stats {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .stat-box {
+        padding: 10px;
+        min-width: 80px;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+    
+    .stat-label {
+        font-size: 9px;
+    }
+    
+    /* Progress Overview */
+    .progress-overview {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .progress-card {
+        padding: 12px;
+    }
+    
+    .progress-card h3 {
+        font-size: 14px;
+    }
+    
+    .progress-label {
+        font-size: 11px;
+    }
+    
+    /* Navigation */
+    .main-nav {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        padding: 15px;
+    }
+    
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .nav-item h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .nav-item p {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+    
+    .nav-stats span:last-child {
+        font-size: 16px;
+    }
+    
+    /* Content Sections */
+    .content-section {
+        padding: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 20px;
+    }
+    
+    .section-header h2 i {
+        font-size: 24px;
+    }
+    
+    /* Challenges */
+    .challenge-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .challenge-tab {
+        padding: 10px;
+        font-size: 11px;
+    }
+    
+    .challenge-item {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .challenge-title {
+        font-size: 16px;
+    }
+    
+    .challenge-description {
+        font-size: 12px;
+    }
+    
+    .challenge-stats {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .challenge-stat {
+        font-size: 11px;
+    }
+    
+    .challenge-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .btn-sm {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    /* Badges */
+    .badges-container {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 10px;
+    }
+    
+    .badge-icon {
+        font-size: 28px;
+    }
+    
+    .badge-name {
+        font-size: 9px;
+    }
+    
+    .badge-rarity {
+        font-size: 8px;
+        padding: 2px 5px;
+    }
+    
+    /* Category Grid */
+    .recap-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .recap-card {
+        padding: 15px;
+    }
+    
+    .recap-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    
+    .recap-value {
+        font-size: 28px;
+    }
+    
+    .recap-label {
+        font-size: 11px;
+    }
+    
+    /* Charts */
+    .chart-container {
+        margin-bottom: 15px;
+    }
+    
+    .chart-bar {
+        margin: 5px 0;
+    }
+    
+    .bar-label {
+        min-width: 80px;
+        font-size: 11px;
+    }
+    
+    .bar-value {
+        min-width: 40px;
+        font-size: 11px;
+    }
+    
+    /* Heatmap */
+    .heatmap {
+        gap: 3px;
+    }
+    
+    .heatmap-cell {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .heatmap-cell::after {
+        font-size: 8px;
+    }
+    
+    /* Forms */
+    #addChallengeForm {
+        width: 100%;
+    }
+    
+    #addChallengeForm input,
+    #addChallengeForm textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .category-select,
+    .frequency-select {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+    
+    /* Theme Options */
+    .theme-option {
+        padding: 5px;
+    }
+    
+    .theme-preview {
+        height: 80px;
+    }
+    
+    /* Notification */
+    .notification {
+        max-width: 90%;
+        padding: 12px;
+        right: 5%;
+        font-size: 12px;
+    }
+    
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    /* Modal */
+    #deleteConfirmation > div {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    #deleteConfirmation h3 {
+        font-size: 18px;
+    }
+    
+    #deleteConfirmation p,
+    #deleteConfirmation li {
+        font-size: 12px;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    /* Requirements List */
+    .badge-requirement-item {
+        padding: 10px;
+    }
+    
+    .badge-requirement-item .badge-icon {
+        font-size: 24px;
+    }
+    
+    /* Tabs */
+    .badge-filter-tab,
+    .analytics-period-tab {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .header {
+        padding: 10px;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo-text h1 {
+        font-size: 18px;
+    }
+    
+    .logo-text p {
+        font-size: 8px;
+    }
+    
+    .user-stats {
+        width: 100%;
+    }
+    
+    .stat-box {
+        padding: 8px;
+        min-width: 60px;
+    }
+    
+    .stat-value {
+        font-size: 16px;
+    }
+    
+    .stat-label {
+        font-size: 8px;
+    }
+    
+    .progress-card h3 {
+        font-size: 12px;
+    }
+    
+    .section-header h2 {
+        font-size: 16px;
+    }
+    
+    .section-header h2 i {
+        font-size: 18px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+    
+    .badges-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .badge-icon {
+        font-size: 24px;
+    }
+    
+    .badge-name {
+        font-size: 8px;
+    }
+    
+    .challenge-title {
+        font-size: 14px;
+    }
 }
