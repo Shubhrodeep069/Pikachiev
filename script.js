@@ -1,3 +1,14 @@
+// Hide loading screen after 2.5 seconds
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.opacity = '0';
+        setTimeout(function() {
+            document.getElementById('loadingScreen').style.display = 'none';
+        }, 500);
+    }, 2500); // Change this number to adjust duration (2500 = 2.5 seconds)
+});
+
+
 // Generate 58 badges with different themes
 const generateBadges = () => {
   const badgeCategories = {
@@ -2538,4 +2549,5 @@ function loadSavedTheme() {
         changeTheme(savedTheme);
     }
 }
+
 
